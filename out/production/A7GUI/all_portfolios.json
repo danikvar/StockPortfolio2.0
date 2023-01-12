@@ -1,0 +1,49 @@
+{
+  "1": {
+    "type": "Flexible",
+    "stocks": [
+      {
+        "A": {
+          "total": 19,
+          "transactions": [
+            {
+              "date": "2022-01-03",
+              "trade": "Buy",
+              "quantity": 20,
+              "commission": 25.0,
+              "valueDate": 3129.60009765625
+            },
+            {
+              "date": "2022-01-05",
+              "trade": "Sell",
+              "quantity": 1,
+              "commission": 25.0,
+              "valueDate": 148.60000610351562
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "2": {
+    "type": "Flexible",
+    "stocks": [
+      {
+        "A": {
+          "total": 54,
+          "transactions": [
+            {
+              "date": "2022-01-04",
+              "trade": "Buy",
+              "quantity": 54,
+              "commission": 20.0,
+              "valueDate": 8164.259765625
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "currentPortfolioId": 2,
+  "hasFlexiblePortfolio": 1
+}

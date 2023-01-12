@@ -1,0 +1,203 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Setup Instuctions</title>
+
+    <h1>SETUP INSTRUCTIONS</h1>
+    <hr>
+    <h3>Introduction</h3>
+    <p>Current Maintainers: <strong>DERIL RAJU & REVANTH VENNU</strong> <br>
+
+        This file shows how to setup the project and all the necessary instructions and dependencies
+        to the run the project.</p>
+    <hr>
+
+    <h3>Installation</h3>
+    <p>You will need Java 11 to run the .jar file.</p>
+    <hr>
+
+    <h3>Running the JAR file</h3>
+
+    <p>Find the JAR file here `Stocks_And_Portfolios/res/Stocks_And_Portfolios.jar`</p>
+
+    <p>To run the jar file use the command below <br><br>
+
+        For Windows (Use Git Bash for better experience) <br>
+        <strong>java -jar C://path//to//your//jar//file//Stocks_And_Portfolios.jar</strong> <br> <br>
+
+        For MacOS (In Terminal) <br>
+        <strong>java -jar /path/to/your/jar/file/Stocks_And_Portfolios.jar </strong>
+    </p>
+    <hr>
+
+    <h3>Usage of third party libraries.</h3>
+
+    <p>This project makes use of three third party libraries which are used
+        <li> to handle json file parsing which can be found here <a target="_blank"
+                href="https://code.google.com/archive/p/json-simple/">JSON-SIMPLE</a>
+        </li>
+        <li> to make charts which can be found here <a target="_blank"
+                href="https://www.jfree.org/jfreechart/">JFREECHART</a> and,
+        </li>
+        <li> dependency for jfreechart which can be found here <a target="_blank"
+                href="https://www.jfree.org/jcommon/">JCOMMON</a>
+        </li>
+
+    </p>
+
+    <p>Json_Simple library is distributed under the <a target="_blank"
+            href="https://www.apache.org/licenses/LICENSE-2.0">APACHE LICENCE
+            2.0</a> which states that<br>
+        <i>2. Grant of Copyright License. Subject to the terms and conditions of this License, each Contributor hereby
+            grants to You a perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable copyright license
+            to reproduce, prepare Derivative Works of, publicly display, publicly perform, sublicense, and distribute
+            the Work and such Derivative Works in Source or Object form.</i>
+    </p>
+
+    <p>JCommon and JFreeChart library is distributed under the <a target="_blank"
+            href="https://www.gnu.org/licenses/lgpl-3.0.html">GNU LICENSE </a>Software under the GPL may be run for all
+        purposes, including commercial purposes and even as a tool for creating proprietary software, such as when using
+        GPL-licensed compilers.[50] Users or companies who distribute GPL-licensed works (e.g. software), may charge a
+        fee for copies or give them free of charge</i>
+    </p>
+    <hr>
+
+    <h3>Steps to install json-simple on IntelliJ</h3>
+    <p>1.Go to File -> Project Structure.</p>
+    <img style="width:40%;max-width:40%" alt="profile photo" src="pics/setup-libraries/1.png">
+    <p>2.On the left hand side click Libraries and click "From Maven" under the + button.</p>
+    <img style="width:40%;max-width:40%" alt="profile photo" src="pics/setup-libraries/2.png">
+    <p>3.Under donwload library search for "com.googlecode.json-simple:json-simple:1.1.1" and click ok.</p>
+    <img style="width:40%;max-width:40%" alt="profile photo" src="pics/setup-libraries/3.png">
+    <p>4.click ok under choose modules, make sure it is being added to your project.</p>
+    <img style="width:40%;max-width:40%" alt="profile photo" src="pics/setup-libraries/4.png">
+    <p>5.Click Apply and then OK.</p>
+    <img style="width:40%;max-width:40%" alt="profile photo" src="pics/setup-libraries/5.png">
+    <p>6.Similiary add the other two third party libraries using the below in search box.
+        <br>
+        - <strong>org.jfree:jcommon:1.0.24</strong> <br>
+        - <strong>org.jfree:jfreechart:1.5.3</strong>
+    </p>
+    <hr>
+
+
+
+    <h3>List of libraries the application is using.</h3>
+    <p>This project is making use of three third party libraries <b>json-simple, jcommon, jfreechart</b></p>
+    <p>It uses other inbuilt JDK libraries like DateTimeFormatter, SimpleDateFormat, HttpClient etc which doesn't
+        require any separate installation.</p>
+    <hr>
+    <h3>How to use the program (Text Based Interface)</h3>
+
+    <p>Now that your jar file is running follow the below steps as an example.</p>
+    <p>
+        <li>Select 1 for Text based interface.</li>
+    </p>
+    <img style="width:40%;max-width:40%" alt="profile photo" src="pics/gui_or_test.png">
+
+
+    <h4>Creating a portfolio of 1 stock</h4>
+    <p>The first time you run it will show a screen to select one of the 10 inputs</p>
+    <li>Press 1 for creating a portfolio</li>
+    <li>Enter nunber of stocks you wish to enter (1 in this case)</li>
+    <li>For each stock, enter the stock name and the quantity, date on which it is to be purchased and the associated
+        commission for the trade. (you cannot give fractional shares)</li>
+    <li>You will receive a portfolio id after done entering all the stocks and quantities.</li>
+    <li>Press (n) to return to main menu.</li> <br>
+
+    <img style="width:40%;max-width:40%" alt="profile photo" src="pics/CreatePortfolio.jpg">
+
+    <h4>Purchasing stock 1</h4>
+    <li>In the main menu Press 6 to purchase a new stock.</li>
+    <li>Enter a existing portfolio id (you will be prompted to reenter if provided with a non existent portfolio.)</li>
+    <li>Enter the stock name and the quantity, date on which it is to be purchased and the associated
+        commission for the trade. (you cannot give fractional shares) </li>
+    <li>Press (y) to purchase another stock.</li> <br>
+
+    <img style="width:40%;max-width:40%" alt="profile photo" src="pics/PurchaseStock1.jpg">
+
+    <h4>Purchasing stock 2</h4>
+    <li>Enter a existing portfolio id (you will be prompted to reenter if provided with a non existent portfolio.)</li>
+    <li>Enter the stock name and the quantity, date on which it is to be purchased and the associated
+        commission for the trade. (you cannot give fractional shares) </li>
+    <li>Press (y) to purchase another stock.</li> <br>
+
+    <img style="width:40%;max-width:40%" alt="profile photo" src="pics/PurchaseStock2.jpg">
+
+    <h4>Purchasing stock 3</h4>
+    <li>In the main menu Press 6 to purchase a new stock.</li>
+    <li>Enter a existing portfolio id (you will be prompted to reenter if provided with a non existent portfolio.)</li>
+    <li>Enter the stock name and the quantity, date on which it is to be purchased and the associated
+        commission for the trade. (you cannot give fractional shares) </li>
+    <li>Press (n) to return back to main menu.</li> <br>
+
+    <img style="width:40%;max-width:40%" alt="profile photo" src="pics/PurchaseStock3.jpg">
+
+    <h4>Querying portfolio for a particular date 2022-06-07</h4>
+    <li>In the main menu Press 5 to get total value of a portfolio</li>
+    <li>Enter the portfolio id (1 in this case)</li>
+    <li>Enter the date in yyyy-MM-DD format to get the value on (2022-06-07 in this case)</li>
+    <li>Total value and composition will be printed on screen</li>
+    <li>Press (y) to get total value of another portfolio.</li> <br>
+
+    <img style="width:40%;max-width:40%" alt="profile photo" src="pics/GetValueForDate1.jpg">
+
+    <h4>Querying portfolio for a particular date 2022-08-09</h4>
+    <li>Enter the portfolio id (1 in this case)</li>
+    <li>Enter the date in yyyy-MM-DD format to get the value on (2022-08-09 in this case)</li>
+    <li>Total value and composition will be printed on screen</li>
+    <li>Press (n) to get back to the main menu.</li> <br>
+
+    <img style="width:40%;max-width:40%" alt="profile photo" src="pics/GetValueForDate2.jpg">
+
+    <h4>Getting cost basis for a particular date 2022-06-07</h4>
+    <li>In the main menu Press 8 to get cost basis of a portfolio</li>
+    <li>Enter the portfolio id (1 in this case)</li>
+    <li>Enter the date in yyyy-MM-DD format to get the value on (2022-06-07 in this case)</li>
+    <li>Total cost basis will be printed on screen</li>
+    <li>Press (y) to get cost basis of another portfolio.</li> <br>
+
+    <img style="width:40%;max-width:40%" alt="profile photo" src="pics/GetValueForDate1.jpg">
+
+    <h4>Getting cost basis for a particular date 2022-08-09</h4>
+    <li>Enter the portfolio id (1 in this case)</li>
+    <li>Enter the date in yyyy-MM-DD format to get the value on (2022-08-09 in this case)</li>
+    <li>Total cost basis will be printed on screen</li>
+    <li>Press (n) to get back to the main menu.</li> <br>
+
+    <img style="width:40%;max-width:40%" alt="profile photo" src="pics/GetValueForDate2.jpg">
+
+    <h4>Exiting the program</h4>
+    <li>Now that you are on the main menu, Press 10 to exit the program.</li><br>
+
+    <img style="width:40%;max-width:40%" alt="profile photo" src="pics/Exit.jpg">
+
+    <hr>
+
+    <!-- <h3>Uploading a InFlexible portfolio</h3>
+    <p>If the user wants to upload an existing inflexible portfolio, below is the format that he/she should upload</p>
+    <img style="width:20%;max-width:20%" alt="profile photo" src="pics/InFlexiblePortfolioUpload.jpg">
+    <hr>
+
+    <h3>Uploading a Flexible portfolio</h3>
+    <p>If the user wants to upload an existing flexible portfolio, below is the format that he/she should upload</p>
+    <img style="width:20%;max-width:20%" alt="profile photo" src="pics/FlexiblePortfolioUpload.jpg">
+    <hr> -->
+
+    <h3>Data caveats</h3>
+
+    <li>The program supports the stocks from the list of all stocks available on the AlphaVantage API.<br>
+    </li>
+
+    <li>Date Ranges allowed are as below (as per AlphaVantage Documentation):
+        <ul>
+            <li>Lower threshold: 20 years before from today</li>
+            <li>Upper threshold: Today (Present Day)</li>
+        </ul>
+
+        </i>
+    </li>
+
+</head>

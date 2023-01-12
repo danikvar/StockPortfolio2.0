@@ -1,0 +1,50 @@
+Code Review Assignment 7 
+
+Design Critique with its Strengths and Drawbacks: 
+
+Overall, the design was very solid. They have followed the General Callback design pattern 
+which eliminated the coupling between the view and the controller. The API is not tightly coupled 
+to the model making it easier to switch to any other API with minimal changes to the code. The strategy
+was also not tightly coupled to the model making it flexible to add any other strategies without changing 
+the design of the program. The interfaces were very well defined, and each class had an interface. 
+There was no abstract controller linking the text-based controller and the GUI controller. The program was
+highly dependent on JSON representations of data within the model. The stocks held in the portfolio were 
+created as linked JSON objects stored in the portfolio. While this is convenient for storing and saving 
+stock data it has two major drawbacks. The first is that the stock objects do not have strict design limitations.
+A user working with the portfolio and trying to create a different stock object could fail to input necessary 
+data for it to work with the interface and cause unintended behavior in the portfolio. It also makes it very 
+non-transparent and since there is no defined class to look at what features each stock object should have it 
+could be difficult for a customer to design implementations of their own stocks. The JSON implementation also means
+that the stocks are tightly coupled to the portfolio. If a customer wanted to include a different stock implementation
+(for example tracking different values, having different price values instead of closing, bonds that aren’t allowed to be 
+sold until some date, etc.) then they would likely have to change a lot of the existing code as opposed to creating a new 
+implementation of a stock object with its own custom function implementations. 
+
+Implementation Critique Strengths and Weaknesses:  
+
+The implementation of the program was very easy to work with as it had very few bugs and was very clear with the
+functionality of every method with minimal to no unnecessary code. The helper methods, the setter/worker objects
+were very helpful, which made implementing the new methods simple. They created a functions object to link the GUI
+and the model which made adding new functionality to both much easier. There were a few minor bugs that were easy 
+to fix. These were due to a typo and one missing filter line but exposed a major flaw in the program. Sometimes the 
+sales transactions or buy transactions would fail due to an error being thrown, which was caught and returned as a 
+string. The transaction data would not be updated, however other stock data would be updated in the JSON file that 
+stores the data for the main application. This causes the portfolio to fail in all future transactions due to incorrect 
+data, with no way to delete the portfolio in the application. The only way to remove the broken portfolio would be to 
+manually remove it from the portfolio storage JSON file. To fix this I would suggest only setting data values at the very 
+end of each method, that way if the method stops early due to an error no values in the portfolio are updated. Splitting up 
+each portfolio into its own JSON file and loading it that way might helpful since the application relies on a single JSON 
+file which if broken can cause the whole application to fail. This way if a single portfolio breaks it can be ignored or 
+deleted easily. There are a few methods in the model class which are huge and can be broken down into smaller helper methods. 
+The recurring dollar cost averaging fails to work through GUI when the user decides on a start date as well as the end date. 
+It only works in the case of dollar cost averaging with no end date. When the user clicks on a button to choose a function 
+from the main menu such as cost basis, clicks on the text entry field but changes his mind to choosing some other option from
+the main menu, the back button does not work until and unless all the entry fields required by that function are filled with
+valid inputs making it difficult to access the main menu. 
+
+Documentation Critique: 
+
+The documentation was great. All the commants and Javadocs for the methods defined were very clear and helpful in understanding the functionality
+of the method. The design documentation was very insightful in understanding how the program worked together. The helper methods were
+commented well and the setup readme had a good explanation of how to work with the text based interface. The main drawback is that the 
+setup-readme file does not have instructions on how to use the GUI which might be helpful to someone who did not use the GUI before. 
